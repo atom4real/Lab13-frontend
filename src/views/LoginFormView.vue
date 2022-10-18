@@ -9,12 +9,16 @@
       <Form @submit="handleLogin" :validation-schema="schema">
         <div class="form-group">
           <label for="username">Username</label>
+
           <Field name="username" type="text" class="form-control" />
+
           <ErrorMessage name="username" class="error-feedback" />
         </div>
         <div class="form-group">
           <label for="password">Password</label>
+
           <Field name="password" type="password" class="form-control" />
+
           <ErrorMessage name="password" class="error-feedback" />
         </div>
 
@@ -41,6 +45,7 @@
 <script>
 import { Form, Field, ErrorMessage } from 'vee-validate'
 import * as yup from 'yup'
+import AuthService from '@/services/AuthService.js'
 export default {
   name: 'LoginView',
   components: {
@@ -57,6 +62,14 @@ export default {
       loading: false,
       message: '',
       schema
+    }
+  },
+  methods: {
+    handleLogin(user) {
+      console.log(user)
+      AuthService.login(user).then(() => {
+        this.$router.push({ path: '/' })
+      })
     }
   }
 }
