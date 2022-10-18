@@ -67,9 +67,13 @@ export default {
   methods: {
     handleLogin(user) {
       console.log(user)
-      AuthService.login(user).then(() => {
-        this.$router.push({ path: '/' })
-      })
+      AuthService.login(user)
+        .then(() => {
+          this.$router.push({ path: '/' })
+        })
+        .catch(() => {
+          this.message = 'Wrong username or password'
+        })
     }
   }
 }
