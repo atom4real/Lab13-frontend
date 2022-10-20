@@ -34,6 +34,7 @@
   <nav>
     <router-link :to="{ name: 'EventList' }">Home</router-link> |
     <router-link :to="{ name: 'about' }">About</router-link> |
+    <router-link :to="{ name: 'OrganizerView' }"> Organizer</router-link> |
     <router-link :to="{ name: 'AddEvent' }"> New Event</router-link>
   </nav>
   <router-view />
