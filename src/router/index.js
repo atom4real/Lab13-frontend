@@ -16,6 +16,7 @@ import OrganizerDetailView from '@/views/organizer/OrganizerDetailView.vue'
 import OrganizerLayoutView from '@/views/organizer/OrganizerLayoutView.vue'
 import OrganizerView from '@/views/OrganizerListView.vue'
 import Login from '@/views/LoginFormView.vue'
+import RegisterView from '@/views/RegisterView.vue'
 const routes = [
   {
     path: '/',
@@ -133,6 +134,11 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: RegisterView
   },
   {
     path: '/:catchAll(.*)',

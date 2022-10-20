@@ -24,6 +24,13 @@ export default {
     localStorage.removeItem('user')
     GStore.currentUser = null
   },
+  register(user) {
+    return apiClient.post('/register', {
+      username: user.username,
+      password: user.password,
+      email: user.email
+    })
+  },
   getUser() {
     return JSON.parse(localStorage.getItem('user'))
   },
